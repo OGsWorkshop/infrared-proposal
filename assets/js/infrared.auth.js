@@ -38,19 +38,24 @@ async function apiRequest(path, options = {}) {
 	try {
 		response = await fetch(path, requestOptions);
 	} catch (error) {
-		const message =
+		throw new Error(
 			error && error.message
 				? error.message
-				: "Network error while contacting the server";
-		throw new Error(message, { cause: error });
+				: "Network error while contacting the server",
+		);
 	}
 
-	const payload = await response.json().catch(() => null);
+	let payload = null;
+	try {
+		payload = await response.json();
+	} catch {
+		payload = null;
+	}
 
 	if (!response.ok) {
-		const message =
-			payload && payload.error ? payload.error : "Request failed";
-		throw new Error(message);
+		throw new Error(
+			payload && payload.error ? payload.error : "Request failed",
+		);
 	}
 
 	return payload;
@@ -116,19 +121,19 @@ async function ui(user) {
 	const pfp = document.getElementById("pfp");
 
 	if (!user) {
-		form.style.display = "block";
-		loggedIn.style.display = "none";
+		if (form) form.style.display = "block";
+		if (loggedIn) loggedIn.style.display = "none";
 		setSignedInUserId(null);
 		return;
 	}
 
 	setSignedInUserId(user);
-	displayLabel.textContent = user.display || user.username;
-	userLabel.textContent = `@${user.username}`;
-	pfp.src = user.pfp || "/assets/img/fav.png";
+	if (displayLabel) displayLabel.textContent = user.display || user.username;
+	if (userLabel) userLabel.textContent = `@${user.username}`;
+	if (pfp) pfp.src = user.pfp || "/assets/img/fav.png";
 
-	form.style.display = "none";
-	loggedIn.style.display = "block";
+	if (form) form.style.display = "none";
+	if (loggedIn) loggedIn.style.display = "block";
 }
 
 async function signUp(username, pass) {
@@ -152,8 +157,8 @@ async function signUp(username, pass) {
 
 		const user = normalizeUser(payload.user);
 		await ui(user);
-		await getNewData();
-		await saveNewData("no");
+		if (typeof getNewData === "function") await getNewData();
+		if (typeof saveNewData === "function") await saveNewData("no");
 	} catch (error) {
 		showAuthError(error.message);
 	}
@@ -180,7 +185,7 @@ async function signIn(username, pass) {
 
 		const user = normalizeUser(payload.user);
 		await ui(user);
-		await getNewData();
+		if (typeof getNewData === "function") await getNewData();
 	} catch (error) {
 		showAuthError(error.message);
 	}
@@ -189,9 +194,7 @@ async function signIn(username, pass) {
 async function convertToDataURL(file) {
 	return new Promise((resolve, reject) => {
 		const reader = new FileReader();
-		reader.onloadend = () => {
-			resolve(reader.result);
-		};
+		reader.onloadend = () => resolve(reader.result);
 		reader.onerror = reject;
 		reader.readAsDataURL(file);
 	});
@@ -203,7 +206,8 @@ async function updateBio() {
 	const bio = input.value.trim().slice(0, 200);
 	clearAuthError();
 	try {
-		const currentDisplay = document.getElementById("display-label")?.textContent?.trim() || "";
+		const currentDisplay =
+			document.getElementById("display-label")?.textContent?.trim() || "";
 		const payload = await apiRequest("/api/auth/profile", {
 			method: "PUT",
 			body: { display: currentDisplay, bio },
@@ -253,7 +257,7 @@ async function selectPresetPfp(index) {
 		setSignedInUserId(user);
 		const pfpEl = document.getElementById("pfp");
 		if (pfpEl) pfpEl.src = user.pfp;
-		
+
 		document.querySelectorAll(".preset-pfp").forEach((el, i) => {
 			el.classList.toggle("selected", i + 1 === index);
 		});
@@ -278,9 +282,7 @@ async function updatePfp() {
 			const dataUrl = await convertToDataURL(file);
 			const payload = await apiRequest("/api/auth/avatar", {
 				method: "POST",
-				body: {
-					dataUrl,
-				},
+				body: { dataUrl },
 			});
 
 			const user = normalizeUser(payload.user);
@@ -306,9 +308,7 @@ async function updateName() {
 	try {
 		const payload = await apiRequest("/api/auth/profile", {
 			method: "PUT",
-			body: {
-				display: safeName,
-			},
+			body: { display: safeName },
 		});
 
 		const user = normalizeUser(payload.user);

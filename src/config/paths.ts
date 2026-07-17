@@ -2,7 +2,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const publicPath = fileURLToPath(
-	new URL("../../public/", import.meta.url),
+	new URL("../../", import.meta.url),
 );
 export const avatarDirectory = resolve(publicPath, "uploads/avatars");
 export const bannerDirectory = resolve(publicPath, "uploads/banners");

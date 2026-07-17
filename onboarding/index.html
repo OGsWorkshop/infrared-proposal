@@ -247,48 +247,10 @@
         }
     </script>
     <script>
-        const AUTH_USER_ID_KEY = "infrared_auth_uid"
+        const AUTH_UID_KEY = "infrared_auth_uid"
 
         function escapeChars(value) {
             return String(value || "").replace(/<\/?[^>]+(>|$)/g, "")
-        }
-
-        async function apiRequest(path, options = {}) {
-            const requestOptions = {
-                method: options.method || "GET",
-                headers: {
-                    "content-type": "application/json",
-                    ...(options.headers || {}),
-                },
-                credentials: "same-origin",
-            }
-
-            if (options.body !== undefined) {
-                requestOptions.body = JSON.stringify(options.body)
-            }
-
-            let response
-            try {
-                response = await fetch(path, requestOptions)
-            } catch (error) {
-                const message =
-                    error && error.message
-                        ? error.message
-                        : "Network error while contacting the server"
-                throw new Error(message, { cause: error })
-            }
-            let payload = null
-            try {
-                payload = await response.json()
-            } catch {
-                payload = null
-            }
-
-            if (!response.ok) {
-                throw new Error(payload && payload.error ? payload.error : "Request failed")
-            }
-
-            return payload
         }
 
         async function createAccount() {
@@ -301,16 +263,17 @@
             }
 
             try {
-                const payload = await apiRequest("/api/auth/signup", {
+                const response = await fetch("/api/auth/signup", {
                     method: "POST",
-                    body: {
-                        username,
-                        password,
-                    },
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({ username, password }),
+                    credentials: "same-origin",
                 })
+                const payload = await response.json()
+                if (!response.ok) throw new Error(payload.error || "Request failed")
 
                 if (payload.user && payload.user.id) {
-                    localStorage.setItem(AUTH_USER_ID_KEY, payload.user.id)
+                    localStorage.setItem(AUTH_UID_KEY, payload.user.id)
                 }
 
                 toast("fa-check-circle", "Account created!")
