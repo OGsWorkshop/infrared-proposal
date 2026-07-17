@@ -1,4 +1,4 @@
-const AUTH_UID_STORAGE_KEY = "cherri_auth_uid";
+﻿const AUTH_UID_STORAGE_KEY = "infrared_auth_uid";
 
 function escapeChars(value) {
 	return String(value || "").replace(/<\/?[^>]+(>|$)/g, "");

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cherri | profile</title>
+    <title>Infrared | profile</title>
     <link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/font.css?v=2">
     <link rel="stylesheet" href="/assets/css/colors/default.css" id="csslink">
@@ -1068,14 +1068,14 @@
                             <div class="setting-row">
                                 <label class="setting-label">Display Name</label>
                                 <div class="flex-row" style="gap: 8px;">
-                                    <input type="text" id="display-name-input" placeholder="New display name…" class="rift-input">
+                                    <input type="text" id="display-name-input" placeholder="New display nameâ€¦" class="rift-input">
                                     <button onclick="updateName()" class="btn-pink-sm">Update</button>
                                 </div>
                             </div>
                             <div class="setting-row">
                                 <label class="setting-label">Bio</label>
                                 <div class="flex-row" style="gap: 8px; align-items: flex-end;">
-                                    <textarea id="bio-input" placeholder="About you… (200 chars max)" maxlength="200" rows="2"
+                                    <textarea id="bio-input" placeholder="About youâ€¦ (200 chars max)" maxlength="200" rows="2"
                                         class="rift-input" style="resize: none; flex: 1; color: var(--text)"></textarea>
                                     <button onclick="updateBio()" class="btn-pink-sm">Save</button>
                                 </div>
@@ -1102,7 +1102,7 @@
                                 <div class="upload-row">
                                     <div>
                                         <label class="setting-label" style="margin-bottom: 2px;">Banner</label>
-                                        <span class="upload-hint">1500×500 · 10 MB max</span>
+                                        <span class="upload-hint">1500Ã—500 Â· 10 MB max</span>
                                     </div>
                                     <input type="file" id="banner-upload" accept="image/*" style="display: none;">
                                     <button onclick="updateBanner()" class="btn-pink-sm">Upload</button>
@@ -1200,7 +1200,7 @@
             <center>
                 <div style="text-align: center; margin-bottom: 20px;">
                     <h2 class="title" style="font-size: 40px; filter: none;">Log in</h2>
-                    <p style="color: var(--text-2); opacity: 0.6;">Welcome back to Cherri</p>
+                    <p style="color: var(--text-2); opacity: 0.6;">Welcome back to Infrared</p>
                 </div>
             </center>
             <div class="flex-col" style="gap: 10px;">
@@ -1243,13 +1243,13 @@
         </div>
     </div>
 
-    <script src="/assets/js/cherri.data.js?v=20260619a"></script>
-    <script src="/assets/js/cherri.auth.js?v=20260619a"></script>
-    <script src="/assets/js/cherri.ui.js?v=20260619a"></script>
+    <script src="/assets/js/infrared.data.js?v=20260619a"></script>
+    <script src="/assets/js/infrared.auth.js?v=20260619a"></script>
+    <script src="/assets/js/infrared.ui.js?v=20260619a"></script>
     <script>
-        document.getElementById("csslink").href = `/assets/css/colors/${localStorage.getItem("cherri_theme") ?? "default"}.css`;
+        document.getElementById("csslink").href = `/assets/css/colors/${localStorage.getItem("infrared_theme") ?? "default"}.css`;
     </script>
-    <script src="/assets/js/cherri.ads.js"></script>
+    <script src="/assets/js/infrared.ads.js"></script>
 
     <script>
         const ADMIN_USERNAMES = new Set([
@@ -1384,7 +1384,7 @@
                 <div class="admin-ticket-header">
                     <div>
                             <div class="admin-ticket-title">${escapeHtml(ticket.reported_username)} reported by ${escapeHtml(ticket.created_by)}</div>
-                        <div class="admin-ticket-meta">${escapeHtml(ticket.scope)}${ticket.room ? ` • ${escapeHtml(ticket.room)}` : ""}</div>
+                        <div class="admin-ticket-meta">${escapeHtml(ticket.scope)}${ticket.room ? ` â€¢ ${escapeHtml(ticket.room)}` : ""}</div>
                     </div>
                     <div class="admin-ticket-status">${escapeHtml(ticket.status)}</div>
                 </div>
@@ -1436,7 +1436,7 @@
                 <div class="admin-ticket-header">
                     <div>
                         <div class="admin-ticket-title">${appellant}</div>
-                        <div class="admin-ticket-meta">${ip} • ${escapeHtml(new Date(appeal.created_at).toLocaleString())}</div>
+                        <div class="admin-ticket-meta">${ip} â€¢ ${escapeHtml(new Date(appeal.created_at).toLocaleString())}</div>
                     </div>
                     <div class="admin-ticket-status">${escapeHtml(appeal.status)}</div>
                 </div>
@@ -1839,7 +1839,7 @@
                         <div class="admin-ipban-info">
                             <div class="admin-ipban-ip">${escapeHtml(b.ip)}</div>
                             ${b.bannedUser ? `<div class="admin-ipban-user">User: @${escapeHtml(b.bannedUser)}</div>` : ""}
-                            <div class="admin-ipban-meta">${b.reason ? escapeHtml(b.reason) + " · " : ""}by ${escapeHtml(b.bannedBy)}</div>
+                            <div class="admin-ipban-meta">${b.reason ? escapeHtml(b.reason) + " Â· " : ""}by ${escapeHtml(b.bannedBy)}</div>
                         </div>
                         <button class="btn-admin-unban" onclick="adminUnbanIp('${b.id}')">Unban</button>
                     </div>
@@ -2036,7 +2036,7 @@
                 // Stats
                 const memberSince = stats.memberSince
                     ? new Date(stats.memberSince).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
-                    : "—";
+                    : "â€”";
                 const statCards = [
                     { icon: "fa-message", label: "Messages Sent", value: (stats.totalMessages ?? 0).toLocaleString() },
                     { icon: "fa-comments", label: "Room Messages", value: (stats.roomMessages ?? 0).toLocaleString() },

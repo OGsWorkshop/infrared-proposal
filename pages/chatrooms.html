@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cherri | chatrooms</title>
+    <title>Infrared | chatrooms</title>
     <link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/font.css?v=2349">
     <link rel="stylesheet" href="/assets/css/colors/default.css" id="csslink">
     <link rel="stylesheet" href="/assets/css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
     <link rel="stylesheet" href="/assets/icons/css/all-pro.css">
-    <script src="/assets/js/cherri.devicetag.js"></script>
+    <script src="/assets/js/infrared.devicetag.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(regs => {
@@ -614,7 +614,7 @@
         overflow: hidden;
     }
 
-    /* shown state — toggled by JS */
+    /* shown state â€” toggled by JS */
     #gif-picker.open {
         display: flex;
     }
@@ -707,7 +707,7 @@
         transform: scale(1.02);
     }
 
-    /* ── Saved quotes gallery ── */
+    /* â”€â”€ Saved quotes gallery â”€â”€ */
     #quotes-results {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -750,7 +750,7 @@
         z-index: 1;
     }
 
-    /* avatar image — full card height, left half only */
+    /* avatar image â€” full card height, left half only */
     .sqi-bg {
         position: absolute;
         top: 0;
@@ -765,7 +765,7 @@
         mask-image: linear-gradient(to right, black 40%, transparent 100%);
     }
 
-    /* text content — right portion, centered */
+    /* text content â€” right portion, centered */
     .sqi-body {
         position: absolute;
         top: 0;
@@ -824,8 +824,8 @@
     .saved-quote-item:hover .sqi-delete { opacity: 1; }
     .sqi-delete:hover { color: #f04747; }
 
-    /* ── Quote card (inline in chat) ── */
-    /* ── Quote card — MakeItAQuote style ── */
+    /* â”€â”€ Quote card (inline in chat) â”€â”€ */
+    /* â”€â”€ Quote card â€” MakeItAQuote style â”€â”€ */
     .quote-card {
         position: relative;
         background: #080808;
@@ -931,7 +931,7 @@
     .quote-card-save.saved { color: var(--accent, #7c6aff); border-color: var(--accent, #7c6aff); }
     .quote-card-save:disabled { cursor: default; }
 
-    /* ── Quote action menu ── */
+    /* â”€â”€ Quote action menu â”€â”€ */
     .quote-action-menu {
         position: fixed;
         z-index: 9999;
@@ -1985,7 +1985,7 @@
         width: 100vw;
     }
 
-    /* ── Toast notifications ── */
+    /* â”€â”€ Toast notifications â”€â”€ */
     #toast-container {
         position: fixed;
         bottom: 90px;
@@ -2022,7 +2022,7 @@
     .chat-toast-info { border-color: rgba(255,255,255,0.1); }
     .chat-toast i { font-size: 13px; }
 
-    /* ── Inline edit ── */
+    /* â”€â”€ Inline edit â”€â”€ */
     .inline-edit-wrap {
         display: flex;
         flex-direction: column;
@@ -2056,7 +2056,7 @@
         margin-right: auto;
     }
 
-    /* ── Reactions ── */
+    /* â”€â”€ Reactions â”€â”€ */
     .reaction-bar {
         display: flex;
         flex-wrap: wrap;
@@ -2095,7 +2095,7 @@
     }
     #quick-react-picker button:hover { background: rgba(255,255,255,0.1); transform: scale(1.15); }
 
-    /* ── Image URL preview ── */
+    /* â”€â”€ Image URL preview â”€â”€ */
     .chat-url-img {
         max-width: 300px;
         max-height: 220px;
@@ -2107,7 +2107,7 @@
     }
     .chat-url-img:hover { opacity: 0.9; }
 
-    /* ── Relative timestamp tooltip ── */
+    /* â”€â”€ Relative timestamp tooltip â”€â”€ */
     .message-time { cursor: default; }
     .message-time:hover::after {
         content: attr(title);
@@ -2126,7 +2126,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
-    /* ── Jump to bottom ── */
+    /* â”€â”€ Jump to bottom â”€â”€ */
     #jump-to-bottom {
         position: absolute;
         bottom: calc(14px + 57px + 16px);
@@ -2156,7 +2156,7 @@
     }
     #jump-to-bottom:hover { background: var(--bg-3); color: var(--bright-text); }
 
-    /* ── Channel unread / ping dots ── */
+    /* â”€â”€ Channel unread / ping dots â”€â”€ */
     .channel-ping-dot {
         display: inline-block;
         width: 8px;
@@ -2168,7 +2168,7 @@
         margin-left: auto;
     }
 
-    /* ── Locked channel banner ── */
+    /* â”€â”€ Locked channel banner â”€â”€ */
     #locked-channel-banner {
         background: rgba(250,204,21,0.1);
         border: 1px solid rgba(250,204,21,0.3);
@@ -2182,7 +2182,7 @@
         align-items: center;
     }
 
-    /* ── @mention highlights ── */
+    /* â”€â”€ @mention highlights â”€â”€ */
     .mention {
         display: inline;
         background: rgba(99,102,241,0.18);
@@ -2210,7 +2210,7 @@
         100% { background: rgba(234,179,8,0.22); }
     }
 
-    /* ── Slash command picker ── */
+    /* â”€â”€ Slash command picker â”€â”€ */
     #slash-picker {
         display: none;
         position: absolute;
@@ -2238,7 +2238,7 @@
     #slash-picker .emoji-picker-row:hover,
     #slash-picker .emoji-picker-row.active { background: var(--bg-3); }
 
-    /* ── Ephemeral (client-only) messages ── */
+    /* â”€â”€ Ephemeral (client-only) messages â”€â”€ */
     .ephemeral-message {
         opacity: 0.85;
         border-left: 2px solid var(--accent);
@@ -2252,7 +2252,7 @@
         100% { opacity: 0; }
     }
 
-    /* ── @mention autocomplete picker ── */
+    /* â”€â”€ @mention autocomplete picker â”€â”€ */
     #mention-picker {
         display: none;
         position: absolute;
@@ -2280,7 +2280,7 @@
     #mention-picker .emoji-picker-row:hover,
     #mention-picker .emoji-picker-row.active { background: var(--bg-3); }
 
-    /* ── Sound toggle button ── */
+    /* â”€â”€ Sound toggle button â”€â”€ */
     #sound-toggle-btn {
         background: none;
         border: none;
@@ -2294,7 +2294,7 @@
     }
     #sound-toggle-btn:hover { background: var(--bg-3); color: var(--bright-text); }
 
-    /* ── Sidebar search ── */
+    /* â”€â”€ Sidebar search â”€â”€ */
     .sidebar-search {
         margin: 6px 10px 2px;
         display: flex;
@@ -2315,7 +2315,7 @@
     }
     .sidebar-search input::placeholder { color: var(--text-2); opacity: 0.45; }
 
-    /* ── Admin panel link in sidebar ── */
+    /* â”€â”€ Admin panel link in sidebar â”€â”€ */
     .sidebar-admin-link {
         display: flex;
         align-items: center;
@@ -2386,7 +2386,7 @@
         }
     }
 
-    /* ── Moderation warning modal ── */
+    /* â”€â”€ Moderation warning modal â”€â”€ */
     .mod-warning-backdrop {
         position: fixed;
         inset: 0;
@@ -2463,7 +2463,7 @@
 
     window.toggleOnlineBoard = function () {
         document.body.classList.toggle("online-board-collapsed");
-        localStorage.setItem("cherri_online_board_collapsed", document.body.classList.contains("online-board-collapsed") ? "1" : "0");
+        localStorage.setItem("infrared_online_board_collapsed", document.body.classList.contains("online-board-collapsed") ? "1" : "0");
     };
 
     function applyMobileDefaults() {
@@ -2563,7 +2563,7 @@
                 <i class="fas fa-microphone"></i>
             </button>
             <button id="sound-toggle-btn" title="Toggle notification sounds"
-                onclick="(function(btn){ const on = localStorage.getItem('cherri_sounds') !== '0'; localStorage.setItem('cherri_sounds', on ? '0' : '1'); btn.innerHTML = on ? '<i class=\'fas fa-volume-xmark\'></i>' : '<i class=\'fas fa-volume-high\'></i>'; btn.title = on ? 'Sounds off — click to enable' : 'Sounds on — click to mute'; })(this)">
+                onclick="(function(btn){ const on = localStorage.getItem('infrared_sounds') !== '0'; localStorage.setItem('infrared_sounds', on ? '0' : '1'); btn.innerHTML = on ? '<i class=\'fas fa-volume-xmark\'></i>' : '<i class=\'fas fa-volume-high\'></i>'; btn.title = on ? 'Sounds off â€” click to enable' : 'Sounds on â€” click to mute'; })(this)">
                 <i class="fas fa-volume-high"></i>
             </button>
             <button id="chat-header-close-dm" onclick="window.chatUI.closeCurrentDm()" title="Close DM"
@@ -2725,12 +2725,12 @@
 
     <div class="modal-backdrop" id="modal-leaving">
         <div class="modal" style="width:340px">
-            <h2>You're leaving Cherri</h2>
+            <h2>You're leaving Infrared</h2>
             <p style="font-size:0.88rem;color:var(--text-2);margin:0 0 12px">You're about to visit an external site:</p>
             <div id="leaving-url"
                 style="font-size:0.8rem;background:var(--bg-3);border:1px solid var(--border-4);border-radius:10px;padding:10px 14px;word-break:break-all;color:var(--text);margin-bottom:4px">
             </div>
-            <p class="modal-hint">Cherri is not responsible for external content.</p>
+            <p class="modal-hint">Infrared is not responsible for external content.</p>
             <div class="modal-actions">
                 <button class="btn btn-ghost" onclick="window.chatUI.closeModal('modal-leaving')">Cancel</button>
                 <button class="btn btn-primary" id="leaving-continue">Continue</button>
@@ -2740,13 +2740,13 @@
 
     <div class="modal-backdrop" id="modal-mc">
         <div class="modal" style="width:380px;">
-            <h2>Cherri MC</h2>
+            <h2>Infrared MC</h2>
             <label>Eaglercraft (1.5.2, 1.8.8, 1.12.2)</label>
             <div
                 style="display:flex;align-items:center;gap:8px;background:var(--bg-3);border:1px solid var(--border-4);border-radius:9px;padding:9px 13px;">
                 <code
-                    style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">wss://mc.cherrion.top/</code>
-                <button onclick="navigator.clipboard.writeText('wss://mc.cherrion.top/')"
+                    style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">wss://mc.infrared.earth/</code>
+                <button onclick="navigator.clipboard.writeText('wss://mc.infrared.earth/')"
                     style="background:none;border:none;color:var(--text-2);cursor:pointer;padding:2px 5px;border-radius:5px;font-size:12px;transition:color 0.15s;"
                     title="Copy"><i class="fas fa-copy"></i></button>
             </div>
@@ -2754,8 +2754,8 @@
             <div
                 style="display:flex;align-items:center;gap:8px;background:var(--bg-3);border:1px solid var(--border-4);border-radius:9px;padding:9px 13px;">
                 <code
-                    style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">mc.cherrion.top</code>
-                <button onclick="navigator.clipboard.writeText('mc.cherrion.top')"
+                    style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">mc.infrared.earth</code>
+                <button onclick="navigator.clipboard.writeText('mc.infrared.earth')"
                     style="background:none;border:none;color:var(--text-2);cursor:pointer;padding:2px 5px;border-radius:5px;font-size:12px;transition:color 0.15s;"
                     title="Copy"><i class="fas fa-copy"></i></button>
             </div>
@@ -2805,7 +2805,7 @@
         </div>
     </div>
 
-    <script src="/assets/js/cherri.chat.js?v=20260620" type="module"></script>
+    <script src="/assets/js/infrared.chat.js?v=20260620" type="module"></script>
     <script>
         function escapeHtml(text) {
             return String(text)
@@ -2816,11 +2816,11 @@
                 .replace(/'/g, "&#39;");
         }
 
-        document.getElementById("csslink").href = `/assets/css/colors/${localStorage.getItem("cherri_theme") ?? "default"}.css`;
-        if ((localStorage.getItem("cherri_imageBlur") ?? "yes") !== "yes") document.body.classList.add("no-image-blur");
+        document.getElementById("csslink").href = `/assets/css/colors/${localStorage.getItem("infrared_theme") ?? "default"}.css`;
+        if ((localStorage.getItem("infrared_imageBlur") ?? "yes") !== "yes") document.body.classList.add("no-image-blur");
 
-        const CLOSED_DMS_STORAGE_KEY = "cherri_closed_dm_user_ids";
-        const DM_LAST_SEEN_STORAGE_KEY = "cherri_dm_last_seen";
+        const CLOSED_DMS_STORAGE_KEY = "infrared_closed_dm_user_ids";
+        const DM_LAST_SEEN_STORAGE_KEY = "infrared_dm_last_seen";
 
         window.chatUI = {
             dms: [],
@@ -2986,7 +2986,7 @@
             },
 
             applyOnlineBoardState() {
-                const collapsed = localStorage.getItem("cherri_online_board_collapsed") === "1";
+                const collapsed = localStorage.getItem("infrared_online_board_collapsed") === "1";
                 document.body.classList.toggle("online-board-collapsed", collapsed);
             },
 
@@ -3165,12 +3165,12 @@
                 if (ch?.locked && !isOwner) {
                     if (input) {
                         input.contentEditable = "false";
-                        input.dataset.placeholder = "📢 This channel is locked. Only the owner can post here.";
+                        input.dataset.placeholder = "ðŸ“¢ This channel is locked. Only the owner can post here.";
                     }
                     if (!banner) {
                         banner = document.createElement("div");
                         banner.id = "locked-channel-banner";
-                        banner.innerHTML = '<i class="fas fa-lock" style="margin-right:6px"></i>Announcements — read only';
+                        banner.innerHTML = '<i class="fas fa-lock" style="margin-right:6px"></i>Announcements â€” read only';
                         document.getElementById("msg-input-wrap")?.prepend(banner);
                     }
                     if (mediaButtons) mediaButtons.style.display = "none";
@@ -3187,13 +3187,13 @@
                     if (!isTrusted && window.chat?._myUserId) {
                         if (input) {
                             input.contentEditable = "false";
-                            input.dataset.placeholder = "🛡️ Trusted users only — earn trust with 1,000 messages, 7 day old account, and no recent infractions.";
+                            input.dataset.placeholder = "ðŸ›¡ï¸ Trusted users only â€” earn trust with 1,000 messages, 7 day old account, and no recent infractions.";
                         }
                         let trustedBanner = document.getElementById("locked-channel-banner");
                         if (!trustedBanner) {
                             trustedBanner = document.createElement("div");
                             trustedBanner.id = "locked-channel-banner";
-                            trustedBanner.innerHTML = '<i class="fas fa-shield-check" style="margin-right:6px"></i>Trusted users only — read only for you';
+                            trustedBanner.innerHTML = '<i class="fas fa-shield-check" style="margin-right:6px"></i>Trusted users only â€” read only for you';
                             document.getElementById("msg-input-wrap")?.prepend(trustedBanner);
                         }
                         if (mediaButtons) mediaButtons.style.display = "none";
@@ -3256,7 +3256,7 @@
                         window.chat?.sendMediaMessage(file, "voice");
                     };
                     recorder.start();
-                    showToast("Recording… click mic again to stop", "info");
+                    showToast("Recordingâ€¦ click mic again to stop", "info");
                 }).catch(() => showToast("Microphone access denied", "error"));
             },
 
@@ -3382,7 +3382,7 @@
                             <div class="online-user-name">
                                 <strong>${escapeHtml(label)}</strong>
                             </div>
-                            <span class="online-user-handle">@${escapeHtml(user.username)}${!isMe ? ' · click to DM' : ''}</span>
+                            <span class="online-user-handle">@${escapeHtml(user.username)}${!isMe ? ' Â· click to DM' : ''}</span>
                         </div>
                     `;
                     list.appendChild(li);
@@ -3688,9 +3688,9 @@
             // Sync sound toggle button to saved preference
             const soundBtn = document.getElementById("sound-toggle-btn");
             if (soundBtn) {
-                const on = localStorage.getItem("cherri_sounds") !== "0";
+                const on = localStorage.getItem("infrared_sounds") !== "0";
                 soundBtn.innerHTML = on ? '<i class="fas fa-volume-high"></i>' : '<i class="fas fa-volume-xmark"></i>';
-                soundBtn.title = on ? "Sounds on — click to mute" : "Sounds off — click to enable";
+                soundBtn.title = on ? "Sounds on â€” click to mute" : "Sounds off â€” click to enable";
             }
 
             // Request browser notification permission for @mentions
@@ -3731,7 +3731,7 @@
             });
         });
     </script>
-    <script src="/assets/js/cherri.ads.js"></script>
+    <script src="/assets/js/infrared.ads.js"></script>
 
 </body>
 

@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="obfuscate">
 
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>cherri | home</title>
+	<title>Infrared | home</title>
 	<link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon" />
 	<link rel="stylesheet" href="/assets/css/font.css?v=2" />
 	<link rel="stylesheet" href="/assets/css/colors/default.css" id="csslink" />
@@ -167,7 +167,7 @@
 					transform: translate(-50%, -50%);
 					position: fixed;
 				">
-			<h1 class="hometitle">Cherri</h1>
+			<h1 class="hometitle">Infrared</h1>
 			<p id="splash"></p>
 			<div class="inputcontainer">
 				<i class="far fa-search"></i>
@@ -191,12 +191,6 @@
 					<div class="shortcut-home">
 						<img src="/assets/img/shortcuts/github.png" alt="" />
 						<h3>Github</h3>
-					</div>
-				</a>
-				<a href="/pages/partners.html">
-					<div class="shortcut-home">
-						<i class="far fa-handshake" style="color: white; font-size: 29px; margin-bottom: 10px;"></i>
-						<h3>Our Partners</h3>
 					</div>
 				</a>
 				<a href="https://discord.gg/hUYzETaQ9U" target="_blank">
@@ -226,13 +220,13 @@
 	</center>
 	<div class="modal-backdrop" id="modal-mc">
 		<div class="modal" style="width:380px;">
-			<h2>Cherri MC</h2>
+			<h2>Infrared MC</h2>
 			<label>Eaglercraft (1.5.2, 1.8.8, 1.12.2)</label>
 			<div
 				style="display:flex;align-items:center;gap:8px;background:var(--bg-3);border:1px solid var(--border-4);border-radius:9px;padding:9px 13px;">
 				<code
-					style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">wss://mc.cherrion.top/</code>
-				<button onclick="navigator.clipboard.writeText('wss://mc.cherrion.top/')"
+					style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">wss://mc.infrared.earth/</code>
+				<button onclick="navigator.clipboard.writeText('wss://mc.infrared.earth/')"
 					style="background:none;border:none;color:var(--text-2);cursor:pointer;padding:2px 5px;border-radius:5px;font-size:12px;transition:color 0.15s;"
 					title="Copy"><i class="fas fa-copy"></i></button>
 			</div>
@@ -240,8 +234,8 @@
 			<div
 				style="display:flex;align-items:center;gap:8px;background:var(--bg-3);border:1px solid var(--border-4);border-radius:9px;padding:9px 13px;">
 				<code
-					style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">mc.cherrion.top</code>
-				<button onclick="navigator.clipboard.writeText('mc.cherrion.top')"
+					style="flex:1;font-size:0.85rem;color:var(--bright-text);font-family:monospace;">mc.infrared.earth</code>
+				<button onclick="navigator.clipboard.writeText('mc.infrared.earth')"
 					style="background:none;border:none;color:var(--text-2);cursor:pointer;padding:2px 5px;border-radius:5px;font-size:12px;transition:color 0.15s;"
 					title="Copy"><i class="fas fa-copy"></i></button>
 			</div>
@@ -251,7 +245,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="/assets/js/cherri.index.js"></script>
+	<script src="/assets/js/infrared.index.js"></script>
 	<script>
 		document
 			.getElementById("homesearchlol")
@@ -273,7 +267,7 @@
 		const ipLabels = {
 			"5.188.124.131": "gcore-lb",
 			"5.188.124.67": "gcore-dedi",
-			"5.188.124.58": "cherri-vps",
+			"5.188.124.58": "infrared-vps",
 			"15.204.211.196": "ovh-lb",
 		};
 
@@ -287,7 +281,7 @@
 					window.location.host +
 					"/socket/";
 				const selectedTransport =
-					localStorage.getItem("cherri_transport") || "libcurl";
+					localStorage.getItem("infrared_transport") || "libcurl";
 
 				switch (selectedTransport) {
 					case "epoxy":
@@ -328,10 +322,10 @@
 	</script>
 	<script>
 		document.getElementById("csslink").href =
-			`/assets/css/colors/${localStorage.getItem("cherri_theme") ?? "default"}.css`;
+			`/assets/css/colors/${localStorage.getItem("infrared_theme") ?? "default"}.css`;
 	</script>
 
-	<script src="/assets/js/cherri.ads.js"></script>
+	<script src="/assets/js/infrared.ads.js"></script>
 
 </body>
 

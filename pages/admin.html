@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cherri | admin</title>
+    <title>Infrared | admin</title>
     <link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/font.css?v=2348">
     <link rel="stylesheet" href="/assets/css/colors/default.css" id="csslink">
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/icons/css/all-pro.css">
-    <script src="/assets/js/cherri.devicetag.js"></script>
+    <script src="/assets/js/infrared.devicetag.js"></script>
 </head>
 <style>
     * { font-family: 'figtree normal'; box-sizing: border-box; }
@@ -375,15 +375,15 @@
             <p class="admin-section-title">Users</p>
             <p class="admin-section-sub">Manage all registered accounts.</p>
             <div class="admin-stats">
-                <div class="stat-card"><div class="stat-val" id="stat-total-users">—</div><div class="stat-label">Total users</div></div>
-                <div class="stat-card"><div class="stat-val" id="stat-new-users">—</div><div class="stat-label">New this week</div></div>
+                <div class="stat-card"><div class="stat-val" id="stat-total-users">â€”</div><div class="stat-label">Total users</div></div>
+                <div class="stat-card"><div class="stat-val" id="stat-new-users">â€”</div><div class="stat-label">New this week</div></div>
             </div>
             <div class="admin-search">
                 <i class="fas fa-magnifying-glass"></i>
-                <input type="text" id="user-search" placeholder="Search by username or display name…" oninput="onUserSearchInput()">
+                <input type="text" id="user-search" placeholder="Search by username or display nameâ€¦" oninput="onUserSearchInput()">
             </div>
             <div id="users-table-wrap">
-                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading users…</div>
+                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading usersâ€¦</div>
             </div>
             <div id="users-pagination" style="display:flex;align-items:center;gap:8px;margin-top:12px;justify-content:center;font-size:0.85rem;"></div>
         </div>
@@ -399,7 +399,7 @@
                 <button class="abtn ticket-filter" data-filter="all" onclick="setTicketFilter('all',this)">All</button>
             </div>
             <div id="tickets-table-wrap">
-                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading tickets…</div>
+                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading ticketsâ€¦</div>
             </div>
         </div>
 
@@ -408,7 +408,7 @@
             <p class="admin-section-title">Chat-Muted Users</p>
             <p class="admin-section-sub">Users currently muted from all chatrooms.</p>
             <div id="muted-table-wrap">
-                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading…</div>
+                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loadingâ€¦</div>
             </div>
         </div>
 
@@ -420,7 +420,7 @@
                 <i class="fas fa-plus"></i> Add IP Ban
             </button>
             <div id="ip-bans-table-wrap">
-                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading…</div>
+                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loadingâ€¦</div>
             </div>
         </div>
 
@@ -429,7 +429,7 @@
             <p class="admin-section-title">Hardware Bans</p>
             <p class="admin-section-sub">Banned hardware fingerprints.</p>
             <div id="hw-bans-table-wrap">
-                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading…</div>
+                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loadingâ€¦</div>
             </div>
         </div>
 
@@ -441,9 +441,9 @@
                 <strong style="color:#faad14;"><i class="fas fa-robot"></i> Auto-Punishment Thresholds</strong><br>
                 <span style="font-size:0.8rem;opacity:0.8;">These apply automatically when a user's warning count hits the threshold. Only <em>warn</em>-type infractions are counted.</span>
                 <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
-                    <span style="background:rgba(250,173,20,0.12);color:#faad14;padding:3px 10px;border-radius:7px;font-size:0.78rem;font-weight:600;">3 warns → 1h mute</span>
-                    <span style="background:rgba(250,173,20,0.12);color:#faad14;padding:3px 10px;border-radius:7px;font-size:0.78rem;font-weight:600;">5 warns → 24h mute</span>
-                    <span style="background:rgba(240,71,71,0.12);color:#f04747;padding:3px 10px;border-radius:7px;font-size:0.78rem;font-weight:600;">7 warns → permanent ban</span>
+                    <span style="background:rgba(250,173,20,0.12);color:#faad14;padding:3px 10px;border-radius:7px;font-size:0.78rem;font-weight:600;">3 warns â†’ 1h mute</span>
+                    <span style="background:rgba(250,173,20,0.12);color:#faad14;padding:3px 10px;border-radius:7px;font-size:0.78rem;font-weight:600;">5 warns â†’ 24h mute</span>
+                    <span style="background:rgba(240,71,71,0.12);color:#f04747;padding:3px 10px;border-radius:7px;font-size:0.78rem;font-weight:600;">7 warns â†’ permanent ban</span>
                 </div>
             </div>
             <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
@@ -455,7 +455,7 @@
                 <button class="abtn infraction-filter" data-type="auto_ban" onclick="setInfractionFilter('auto_ban',this)">Auto-Bans</button>
             </div>
             <div id="infractions-table-wrap">
-                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading…</div>
+                <div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loadingâ€¦</div>
             </div>
         </div>
 
@@ -478,7 +478,7 @@
     <div class="modal">
         <h3>Ban User</h3>
         <label>Reason (optional)</label>
-        <input type="text" id="ban-reason" placeholder="Reason for ban…" maxlength="200">
+        <input type="text" id="ban-reason" placeholder="Reason for banâ€¦" maxlength="200">
         <label>Duration (leave blank for permanent)</label>
         <input type="number" id="ban-minutes" placeholder="Minutes (optional)" min="1">
         <div class="modal-error" id="ban-error"></div>
@@ -522,7 +522,7 @@
     <div class="modal">
         <h3 id="modal-rename-title">Rename User</h3>
         <label>New Display Name</label>
-        <input type="text" id="rename-display-input" placeholder="New display name…" maxlength="32">
+        <input type="text" id="rename-display-input" placeholder="New display nameâ€¦" maxlength="32">
         <div class="modal-error" id="rename-error"></div>
         <div class="modal-actions">
             <button class="btn btn-ghost" onclick="closeModal('modal-rename-user')">Cancel</button>
@@ -538,7 +538,7 @@
         <label>IP Address</label>
         <input type="text" id="new-ip-ban-ip" placeholder="e.g. 1.2.3.4" maxlength="64">
         <label>Reason (optional)</label>
-        <input type="text" id="new-ip-ban-reason" placeholder="Reason…" maxlength="200">
+        <input type="text" id="new-ip-ban-reason" placeholder="Reasonâ€¦" maxlength="200">
         <label>Duration (leave blank for permanent)</label>
         <input type="number" id="new-ip-ban-minutes" placeholder="Minutes (optional)" min="1">
         <div class="modal-error" id="new-ip-ban-error"></div>
@@ -553,7 +553,7 @@
 <div class="modal-backdrop" id="modal-view-ips">
     <div class="modal">
         <h3>Recent IPs</h3>
-        <div id="modal-ips-body"><div class="admin-loading">Loading…</div></div>
+        <div id="modal-ips-body"><div class="admin-loading">Loadingâ€¦</div></div>
         <div class="modal-actions">
             <button class="btn btn-ghost" onclick="closeModal('modal-view-ips')">Close</button>
         </div>
@@ -565,7 +565,7 @@
     <div class="modal">
         <h3 id="modal-warn-title">Warn User</h3>
         <label>Reason</label>
-        <textarea id="warn-reason" placeholder="Describe the reason for this warning…" maxlength="500" rows="3"></textarea>
+        <textarea id="warn-reason" placeholder="Describe the reason for this warningâ€¦" maxlength="500" rows="3"></textarea>
         <div class="modal-error" id="warn-error"></div>
         <div class="modal-actions">
             <button class="btn btn-ghost" onclick="closeModal('modal-warn-user')">Cancel</button>
@@ -578,7 +578,7 @@
 <div class="modal-backdrop" id="modal-infractions">
     <div class="modal" style="width:520px">
         <h3 id="modal-infractions-title">Infractions</h3>
-        <div id="modal-infractions-body"><div class="admin-loading">Loading…</div></div>
+        <div id="modal-infractions-body"><div class="admin-loading">Loadingâ€¦</div></div>
         <div class="modal-actions">
             <button class="btn btn-ghost" onclick="closeModal('modal-infractions')">Close</button>
         </div>
@@ -586,7 +586,7 @@
 </div>
 
 <script>
-    document.getElementById("csslink").href = `/assets/css/colors/${localStorage.getItem("cherri_theme") ?? "default"}.css`;
+    document.getElementById("csslink").href = `/assets/css/colors/${localStorage.getItem("infrared_theme") ?? "default"}.css`;
 
     function escapeHtml(t) {
         return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
@@ -623,7 +623,7 @@
         setTimeout(() => { t.style.opacity = "0"; setTimeout(() => t.remove(), 300); }, 3500);
     }
 
-    /* ─────────── Users ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Users â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     let allUsers = [];
 
     let _userPage = 0;
@@ -636,7 +636,7 @@
         _userPage = page;
         const q = document.getElementById("user-search")?.value.trim() || "";
         const url = `/api/admin/users?page=${page}${q ? `&q=${encodeURIComponent(q)}` : ""}`;
-        document.getElementById("users-table-wrap").innerHTML = `<div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading users…</div>`;
+        document.getElementById("users-table-wrap").innerHTML = `<div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading usersâ€¦</div>`;
         try {
             const res = await fetch(url, { credentials: "same-origin" });
             if (!res.ok) { document.getElementById("users-table-wrap").innerHTML = `<div class="admin-empty"><i class="fas fa-lock"></i>Access denied.</div>`; return; }
@@ -649,7 +649,7 @@
                 document.getElementById("stat-total-users").textContent = _userTotal.toLocaleString();
                 document.getElementById("badge-users").textContent = _userTotal;
                 document.getElementById("badge-users").style.display = _userTotal ? "inline" : "none";
-                // new-this-week needs a separate count — just skip updating it if paginated
+                // new-this-week needs a separate count â€” just skip updating it if paginated
             }
 
             renderUsersTable(pageUsers);
@@ -673,7 +673,7 @@
         const end = Math.min((_userPage + 1) * USER_PAGE_SIZE, _userTotal);
         el.innerHTML = `
             <button class="abtn" onclick="loadUsers(${_userPage - 1})" ${_userPage === 0 ? "disabled" : ""}><i class="fas fa-chevron-left"></i></button>
-            <span style="opacity:0.7">${start}–${end} of ${_userTotal.toLocaleString()}</span>
+            <span style="opacity:0.7">${start}â€“${end} of ${_userTotal.toLocaleString()}</span>
             <button class="abtn" onclick="loadUsers(${_userPage + 1})" ${_userPage >= totalPages - 1 ? "disabled" : ""}><i class="fas fa-chevron-right"></i></button>
         `;
     }
@@ -722,7 +722,7 @@
 
     function openUserActions(userId, username, trusted = false) {
         _actionTarget = { userId, username };
-        document.getElementById("modal-user-action-title").textContent = `Actions — @${username}`;
+        document.getElementById("modal-user-action-title").textContent = `Actions â€” @${username}`;
         const isOwner = _meUsername === "x8r";
         document.getElementById("modal-user-action-body").innerHTML = `
             <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:4px;">
@@ -945,8 +945,8 @@
 
     async function viewIPs(userId, username) {
         openModal("modal-view-ips");
-        document.querySelector("#modal-view-ips h3").textContent = `Recent IPs — @${username}`;
-        document.getElementById("modal-ips-body").innerHTML = `<div class="admin-loading">Loading…</div>`;
+        document.querySelector("#modal-view-ips h3").textContent = `Recent IPs â€” @${username}`;
+        document.getElementById("modal-ips-body").innerHTML = `<div class="admin-loading">Loadingâ€¦</div>`;
         try {
             const res = await fetch(`/api/admin/users/${userId}/ip`, { credentials: "same-origin" });
             const data = await res.json();
@@ -965,7 +965,7 @@
         }
     }
 
-    /* ─────────── Tickets ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Tickets â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     let allTickets = [];
     let currentTicketFilter = "open";
 
@@ -1003,7 +1003,7 @@
                 <td style="font-size:0.75rem;opacity:0.5;white-space:nowrap;">${new Date(t.created_at||t.createdAt||0).toLocaleDateString()}</td>
                 <td><strong>@${escapeHtml(t.created_by_username||t.createdByUsername||"?")}</strong></td>
                 <td><span style="color:#f04747;font-weight:600;">@${escapeHtml(t.reported_username||t.reportedUsername||"?")}</span></td>
-                <td style="font-size:0.8rem;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(t.notes||"—")}</td>
+                <td style="font-size:0.8rem;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(t.notes||"â€”")}</td>
                 <td><span class="status-badge status-${t.status}">${t.status}</span></td>
                 <td>
                     <div class="actions">
@@ -1044,7 +1044,7 @@
         } catch { toast("Failed.", "error"); }
     }
 
-    /* ─────────── Muted ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Muted â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     async function loadMuted() {
         window._mutedLoaded = true;
         try {
@@ -1059,7 +1059,7 @@
             const rows = users.map(u => `
                 <tr>
                     <td><div class="user-cell"><img src="${escapeHtml(u.pfp||"/assets/img/fav.png")}" onerror="this.src='/assets/img/fav.png'" alt=""><div><div class="uname">@${escapeHtml(u.username)}</div></div></div></td>
-                    <td style="font-size:0.8rem;opacity:0.65;">${u.chat_muted_until||u.chatMutedUntil ? new Date(u.chat_muted_until||u.chatMutedUntil).toLocaleString() : "—"}</td>
+                    <td style="font-size:0.8rem;opacity:0.65;">${u.chat_muted_until||u.chatMutedUntil ? new Date(u.chat_muted_until||u.chatMutedUntil).toLocaleString() : "â€”"}</td>
                     <td><button class="abtn abtn-success" onclick="unmuteChatUser('${escapeHtml(u.id)}','${escapeHtml(u.username)}')"><i class="fas fa-microphone"></i> Unmute</button></td>
                 </tr>
             `).join("");
@@ -1083,7 +1083,7 @@
         } catch { toast("Failed.", "error"); }
     }
 
-    /* ─────────── IP Bans ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ IP Bans â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     async function loadIpBans() {
         window._ipBansLoaded = true;
         try {
@@ -1098,9 +1098,9 @@
             const rows = bans.map(b => `
                 <tr>
                     <td style="font-family:monospace;font-size:0.82rem;">${escapeHtml(b.ip)}</td>
-                    <td style="font-size:0.8rem;opacity:0.6;">${escapeHtml(b.reason||"—")}</td>
+                    <td style="font-size:0.8rem;opacity:0.6;">${escapeHtml(b.reason||"â€”")}</td>
                     <td style="font-size:0.78rem;opacity:0.5;">${b.expires_at||b.expiresAt ? new Date(b.expires_at||b.expiresAt).toLocaleDateString() : "Permanent"}</td>
-                    <td style="font-size:0.75rem;opacity:0.45;">${escapeHtml(b.banned_by||b.bannedBy||"—")}</td>
+                    <td style="font-size:0.75rem;opacity:0.45;">${escapeHtml(b.banned_by||b.bannedBy||"â€”")}</td>
                     <td><button class="abtn abtn-danger" onclick="deleteIpBan('${escapeHtml(b.id)}','${escapeHtml(b.ip)}')"><i class="fas fa-trash"></i> Remove</button></td>
                 </tr>
             `).join("");
@@ -1147,7 +1147,7 @@
         } catch { toast("Failed.", "error"); }
     }
 
-    /* ─────────── HW Bans ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ HW Bans â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     async function loadHwBans() {
         window._hwBansLoaded = true;
         try {
@@ -1163,9 +1163,9 @@
                 <tr>
                     <td style="font-family:monospace;font-size:0.78rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(b.hwid)}</td>
                     <td style="font-size:0.85rem;">${b.username ? `<a href="/u/${escapeHtml(b.username)}" style="color:var(--accent);">@${escapeHtml(b.username)}</a>` : '<span style="opacity:0.4;">Unknown</span>'}</td>
-                    <td style="font-size:0.8rem;opacity:0.6;">${escapeHtml(b.reason||"—")}</td>
+                    <td style="font-size:0.8rem;opacity:0.6;">${escapeHtml(b.reason||"â€”")}</td>
                     <td style="font-size:0.78rem;opacity:0.5;">${b.expires_at||b.expiresAt ? new Date(b.expires_at||b.expiresAt).toLocaleDateString() : "Permanent"}</td>
-                    <td style="font-size:0.75rem;opacity:0.45;">${escapeHtml(b.banned_by||b.bannedBy||"—")}</td>
+                    <td style="font-size:0.75rem;opacity:0.45;">${escapeHtml(b.banned_by||b.bannedBy||"â€”")}</td>
                     <td><button class="abtn abtn-danger" onclick="deleteHwBan('${escapeHtml(b.id)}')"><i class="fas fa-trash"></i> Remove</button></td>
                 </tr>
             `).join("");
@@ -1190,7 +1190,7 @@
         } catch { toast("Failed.", "error"); }
     }
 
-    /* ─────────── Warn ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Warn â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     function openWarn(userId, username) {
         _actionTarget = { userId, username };
         document.getElementById("modal-warn-title").textContent = `Warn @${username}`;
@@ -1222,10 +1222,10 @@
         } catch { document.getElementById("warn-error").textContent = "Something went wrong."; }
     }
 
-    /* ─────────── Infraction history ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Infraction history â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     async function viewInfractions(userId, username) {
-        document.getElementById("modal-infractions-title").textContent = `Infractions — @${username}`;
-        document.getElementById("modal-infractions-body").innerHTML = `<div class="admin-loading">Loading…</div>`;
+        document.getElementById("modal-infractions-title").textContent = `Infractions â€” @${username}`;
+        document.getElementById("modal-infractions-body").innerHTML = `<div class="admin-loading">Loadingâ€¦</div>`;
         openModal("modal-infractions");
         try {
             const res = await fetch(`/api/admin/users/${userId}/infractions`, { credentials: "same-origin" });
@@ -1245,7 +1245,7 @@
                             <div style="flex:1;min-width:0;">
                                 <div style="font-size:0.82rem;font-weight:700;color:var(--bright-text);text-transform:capitalize;">${escapeHtml(inf.type)}</div>
                                 <div style="font-size:0.8rem;color:var(--text);margin-top:2px;word-break:break-word;">${escapeHtml(inf.reason || "No reason provided")}</div>
-                                <div style="font-size:0.72rem;color:var(--text-2);opacity:0.55;margin-top:4px;">by ${escapeHtml(inf.issued_by||inf.issuedBy||"?")} · ${new Date(inf.created_at||inf.createdAt||0).toLocaleString()}</div>
+                                <div style="font-size:0.72rem;color:var(--text-2);opacity:0.55;margin-top:4px;">by ${escapeHtml(inf.issued_by||inf.issuedBy||"?")} Â· ${new Date(inf.created_at||inf.createdAt||0).toLocaleString()}</div>
                             </div>
                             <button class="abtn abtn-danger" style="padding:3px 7px;font-size:0.72rem;flex-shrink:0;" onclick="deleteInfraction('${escapeHtml(inf.id)}','${escapeHtml(userId)}','${escapeHtml(username)}')"><i class="fas fa-trash"></i></button>
                         </div>
@@ -1268,13 +1268,13 @@
         } catch { toast("Failed.", "error"); }
     }
 
-    /* ─────────── Infractions tab ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Infractions tab â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     let _allInfractions = [];
     let _infractionType = "";
 
     async function loadInfractions() {
         window._infractionsLoaded = true;
-        document.getElementById("infractions-table-wrap").innerHTML = `<div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loading…</div>`;
+        document.getElementById("infractions-table-wrap").innerHTML = `<div class="admin-loading"><i class="fas fa-spinner fa-spin"></i> Loadingâ€¦</div>`;
         try {
             const url = `/api/admin/infractions?limit=100${_infractionType ? `&type=${_infractionType}` : ""}`;
             const res = await fetch(url, { credentials: "same-origin" });
@@ -1309,8 +1309,8 @@
                 <td style="font-size:0.75rem;opacity:0.5;white-space:nowrap;">${new Date(inf.created_at||inf.createdAt||0).toLocaleDateString()}</td>
                 <td><span style="color:${typeColor[inf.type]||'var(--text-2)'};font-weight:700;font-size:0.8rem;text-transform:capitalize;">${escapeHtml(inf.type)}</span></td>
                 <td><span style="color:var(--bright-text);font-weight:600;">@${escapeHtml(inf.username||"?")}</span></td>
-                <td style="font-size:0.8rem;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${escapeHtml(inf.reason||'')}">${escapeHtml(inf.reason||"—")}</td>
-                <td style="font-size:0.75rem;opacity:0.55;">${escapeHtml(inf.issued_by||inf.issuedBy||"—")}</td>
+                <td style="font-size:0.8rem;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${escapeHtml(inf.reason||'')}">${escapeHtml(inf.reason||"â€”")}</td>
+                <td style="font-size:0.75rem;opacity:0.55;">${escapeHtml(inf.issued_by||inf.issuedBy||"â€”")}</td>
                 <td>
                     <button class="abtn abtn-danger" onclick="deleteInfractionGlobal('${escapeHtml(inf.id)}')"><i class="fas fa-trash"></i></button>
                 </td>
@@ -1334,7 +1334,7 @@
         } catch { toast("Failed.", "error"); }
     }
 
-    /* ─────────── Init ─────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Init â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     let _meUsername = "";
     (async () => {
         try {

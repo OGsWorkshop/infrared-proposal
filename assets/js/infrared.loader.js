@@ -1,5 +1,5 @@
-const FAVS_KEY = "cherri_favorites";
-const RECENT_KEY = "cherri_recent";
+﻿const FAVS_KEY = "infrared_favorites";
+const RECENT_KEY = "infrared_recent";
 const MAX_RECENT = 12;
 let gameCount = 0;
 

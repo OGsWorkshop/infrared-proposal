@@ -1,4 +1,4 @@
-import { json } from "../lib/http/response";
+﻿import { json } from "../lib/http/response";
 import type { RouteDefinition } from "../server/router";
 
 interface EmbedMeta {
@@ -79,7 +79,7 @@ async function fetchEmbed(rawUrl: string): Promise<EmbedMeta | null> {
 		const res = await fetch(rawUrl, {
 			signal: controller.signal,
 			headers: {
-				"User-Agent": "Mozilla/5.0 (compatible; CherriBot/1.0)",
+				"User-Agent": "Mozilla/5.0 (compatible; InfraredBot/1.0)",
 				"Accept": "text/html,application/xhtml+xml",
 				"Accept-Language": "en-US,en;q=0.9",
 			},

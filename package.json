@@ -1,5 +1,5 @@
-{
-    "name": "cherri-v2",
+﻿{
+    "name": "infrared",
     "version": "2.0.0",
     "type": "module",
     "scripts": {
@@ -10,10 +10,10 @@
         "db:generate": "drizzle-kit generate",
         "db:migrate": "bun src/db/migrate.ts",
         "start:prod": "bun run db:migrate && bun run start",
-        "lint": "eslint \"public/assets/js/cherri*.js\" \"drizzle.config.js\"",
-        "lint:fix": "eslint \"public/assets/js/cherri*.js\" \"drizzle.config.js\" --fix",
-        "format": "prettier --write \"src/**/*.ts\" \"public/assets/js/cherri*.js\" \"drizzle.config.js\"",
-        "format:check": "prettier --check \"src/**/*.ts\" \"public/assets/js/cherri*.js\" \"drizzle.config.js\"",
+        "lint": "eslint \"assets/js/infrared*.js\" \"drizzle.config.js\"",
+        "lint:fix": "eslint \"assets/js/infrared*.js\" \"drizzle.config.js\" --fix",
+        "format": "prettier --write \"src/**/*.ts\" \"assets/js/infrared*.js\" \"drizzle.config.js\"",
+        "format:check": "prettier --check \"src/**/*.ts\" \"assets/js/infrared*.js\" \"drizzle.config.js\"",
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {

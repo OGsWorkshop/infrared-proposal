@@ -1,7 +1,7 @@
-module.exports = {
+﻿module.exports = {
 	apps: [
 		{
-			name: "cherri",
+			name: "infrared",
 			script: "src/index.ts",
 			interpreter: "bun",
 			env: {

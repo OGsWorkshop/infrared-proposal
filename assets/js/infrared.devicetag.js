@@ -1,11 +1,11 @@
-let _hwid = null;
+﻿let _hwid = null;
 
 async function getHWID() {
 	if (_hwid) return _hwid;
 
 	const canvas = document.createElement("canvas");
 	const ctx = canvas.getContext("2d");
-	ctx.fillText("cherri.hwid", 2, 15);
+	ctx.fillText("infrared.hwid", 2, 15);
 
 	const gl = document.createElement("canvas").getContext("webgl");
 	const dbg = gl?.getExtension("WEBGL_debug_renderer_info");

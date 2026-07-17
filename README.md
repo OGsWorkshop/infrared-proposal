@@ -1,4 +1,4 @@
-# cherri-v2-leak
+﻿# infrared-leak
 https://axisleak.app/ was nice while it lasted
 
 ring me at +18045....

@@ -1,4 +1,4 @@
-import { randomBytes, randomUUID } from "node:crypto";
+﻿import { randomBytes, randomUUID } from "node:crypto";
 import { resolve } from "node:path";
 import { and, count, desc, eq } from "drizzle-orm";
 import sharp from "sharp";
@@ -197,7 +197,7 @@ export const authRoutes: RouteDefinition[] = [
 				},
 			});
 
-			console.log(`[signup] ${username} — ${ctx.clientIp ?? "unknown ip"}`);
+			console.log(`[signup] ${username} â€” ${ctx.clientIp ?? "unknown ip"}`);
 
 			const response = json({ user: toPublicUser(userRow) });
 			response.headers.append(
@@ -308,7 +308,7 @@ export const authRoutes: RouteDefinition[] = [
 				},
 			});
 
-			console.log(`[login] ${username} — ${ctx.clientIp ?? "unknown ip"}`);
+			console.log(`[login] ${username} â€” ${ctx.clientIp ?? "unknown ip"}`);
 
 			const response = json({ user: toPublicUser(userRow) });
 			response.headers.append(
@@ -330,8 +330,8 @@ export const authRoutes: RouteDefinition[] = [
 			const auth = await ctx.auth();
 			const cookies = parseCookies(ctx.request.headers.get("cookie"));
 			const rawToken =
-				typeof cookies.cherri_session === "string"
-					? cookies.cherri_session
+				typeof cookies.infrared_session === "string"
+					? cookies.infrared_session
 					: null;
 
 			if (rawToken) {
@@ -354,7 +354,7 @@ export const authRoutes: RouteDefinition[] = [
 			});
 
 			console.log(
-				`[logout] ${auth?.user.username ?? "anonymous"} — ${ctx.clientIp ?? "unknown ip"}`,
+				`[logout] ${auth?.user.username ?? "anonymous"} â€” ${ctx.clientIp ?? "unknown ip"}`,
 			);
 
 			const response = json({ ok: true });
@@ -666,7 +666,7 @@ export const authRoutes: RouteDefinition[] = [
 			const body = await ctx.jsonBody<Record<string, unknown>>();
 			const preset = Number(body?.preset);
 			if (!Number.isInteger(preset) || preset < 1 || preset > 8) {
-				return json({ error: "Invalid preset (must be 1–8)" }, { status: 400 });
+				return json({ error: "Invalid preset (must be 1â€“8)" }, { status: 400 });
 			}
 
 			const pfp = `/assets/img/pfps/${preset}.png`;

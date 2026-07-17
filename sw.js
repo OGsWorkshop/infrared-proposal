@@ -73,7 +73,6 @@ const CONFIG = {
 		"*/tracking/ads/*",
 		"*/promo/*",
 		"*/affiliates/*",
-		"*/partnerads/*",
 	],
 };
 

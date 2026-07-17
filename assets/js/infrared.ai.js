@@ -1,9 +1,9 @@
-document.getElementById("csslink") &&
+﻿document.getElementById("csslink") &&
 	(document.getElementById("csslink").href =
-		`/assets/css/colors/${localStorage.getItem("cherri_theme") || "default"}.css`);
+		`/assets/css/colors/${localStorage.getItem("infrared_theme") || "default"}.css`);
 const BASE = "/api/ai/chat";
 const MAX_CONTEXT = 15;
-const STORAGE_KEY = "cherri_chats";
+const STORAGE_KEY = "infrared_chats";
 const md = window.markdownit({
 	html: false,
 	linkify: true,
@@ -437,7 +437,7 @@ async function startAiResponse(userText, images = []) {
 
 			if (c.messages.length === 2 && userText) {
 				c.title =
-					userText.length > 40 ? userText.slice(0, 40) + "…" : userText;
+					userText.length > 40 ? userText.slice(0, 40) + "â€¦" : userText;
 				updateHeaderTitle(c.title);
 			}
 			saveToStorage();

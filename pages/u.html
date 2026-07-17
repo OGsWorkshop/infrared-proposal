@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cherri | profile</title>
+    <title>Infrared | profile</title>
     <link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/font.css?v=2349">
     <link rel="stylesheet" href="/assets/css/colors/default.css" id="csslink">
@@ -56,7 +56,7 @@
             overflow: hidden; /* clips the banner to the card's corners */
         }
 
-        /* Banner — no border-radius needed, card handles it */
+        /* Banner â€” no border-radius needed, card handles it */
         .up-banner {
             width: 100%;
             height: 150px;
@@ -216,7 +216,7 @@
     </style>
 </head>
 <body class="obfuscate">
-<script>document.getElementById("csslink").href=`/assets/css/colors/${localStorage.getItem("cherri_theme")??"default"}.css`;</script>
+<script>document.getElementById("csslink").href=`/assets/css/colors/${localStorage.getItem("infrared_theme")??"default"}.css`;</script>
 
 <div class="up-shell">
     <div class="up-nav">
@@ -225,7 +225,7 @@
 
     <div class="up-loading" id="up-loading">
         <i class="fas fa-spinner fa-spin"></i>
-        Loading profile…
+        Loading profileâ€¦
     </div>
 
     <div id="up-content" style="display:none;">
@@ -266,7 +266,7 @@
     const username = parts[parts.length - 1] || "";
 
     if (!username || username === "u") { showNotFound(); return; }
-    document.title = `cherri | @${username}`;
+    document.title = `Infrared | @${username}`;
 
     try {
         const [profileRes, meRes] = await Promise.all([
@@ -302,7 +302,7 @@
     function render(p, me) {
         hide("up-loading");
         show("up-content");
-        document.title = `cherri | ${p.display} (@${p.username})`;
+        document.title = `Infrared | ${p.display} (@${p.username})`;
 
         if (p.bannerUrl) {
             document.getElementById("up-banner").style.backgroundImage = `url(${JSON.stringify(p.bannerUrl)})`;

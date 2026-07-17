@@ -1,11 +1,11 @@
-import { existsSync, mkdirSync } from "node:fs";
+﻿import { existsSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { Database } from "bun:sqlite";
 import { drizzle } from "drizzle-orm/bun-sqlite";
 import { migrate } from "drizzle-orm/bun-sqlite/migrator";
 import * as schema from "./schema";
 
-const resolvedDbPath = resolve(process.cwd(), "data/cherri.sqlite");
+const resolvedDbPath = resolve(process.cwd(), "data/infrared.sqlite");
 const migrationsFolder = resolve(process.cwd(), "drizzle");
 
 mkdirSync(dirname(resolvedDbPath), { recursive: true });

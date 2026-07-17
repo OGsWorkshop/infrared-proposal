@@ -1,4 +1,4 @@
-import js from "@eslint/js";
+﻿import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
 
@@ -33,7 +33,7 @@ export default defineConfig([
 		},
 	},
 	{
-		files: ["public/assets/js/cherri*.js"],
+		files: ["public/assets/js/infrared*.js"],
 		languageOptions: {
 			ecmaVersion: "latest",
 			sourceType: "module",

@@ -1,7 +1,6 @@
-
+﻿
 const texts = [
 	"the ai bubble just inflated again :(",
-	"partnered with everyone",
 	"best game site ever?",
 	"now with its own wisp server!",
 	'"SHUT UP DEKUUUU"',
@@ -10,9 +9,8 @@ const texts = [
 	"create an account for cool stuff",
 	"lights please!",
 	"in the spectacular '26",
-	"gn-math isn't the best game site, cherri is!",
+	"gn-math isn't the best game site, infrared is!",
 	"join the discord",
-	"fill out a partner request please.",
 	"you can hide the sidebar!",
 	"very customizable",
 	"what does gms stand for?",
@@ -35,7 +33,6 @@ const texts = [
 	"yummy!",
 	"extra flavor included",
 	"more account features are coming soon, trust me",
-	"check out the partners",
 	"why do people even use gn-math?",
 	"this domain costed $5.94",
 	"w o w",

@@ -1,10 +1,10 @@
-import {
+﻿import {
 	apiRequest,
 	escapeChars,
 	getData,
 	getMetaData,
 	EMOJI_MAP,
-} from "./cherri.exports.js";
+} from "./infrared.exports.js";
 
 const CHAT_FALLBACK_POLL_INTERVAL_MS = 15000;
 const DM_INBOX_POLL_INTERVAL_MS = 15000;
@@ -72,9 +72,9 @@ function getAudioCtx() {
 	}
 	return _audioCtx;
 }
-function isSoundEnabled() { return localStorage.getItem("cherri_sounds") !== "0"; }
+function isSoundEnabled() { return localStorage.getItem("infrared_sounds") !== "0"; }
 function setSoundEnabled(on) {
-	localStorage.setItem("cherri_sounds", on ? "1" : "0");
+	localStorage.setItem("infrared_sounds", on ? "1" : "0");
 	const btn = document.getElementById("sound-toggle-btn");
 	if (btn) btn.innerHTML = on ? '<i class="fas fa-volume-high"></i>' : '<i class="fas fa-volume-xmark"></i>';
 }
@@ -155,7 +155,7 @@ function sendBrowserNotification(title, body) {
 		const n = new Notification(title, {
 			body: body?.slice(0, 100) || "",
 			icon: "/assets/img/fav.png",
-			tag: "cherri-chat",
+			tag: "infrared-chat",
 		});
 		setTimeout(() => n.close(), 6000);
 	} catch {}
@@ -173,7 +173,7 @@ function parseMentions(text) {
 	});
 }
 
-// ── Mention autocomplete state ─────────────────────────────────────────────
+// â”€â”€ Mention autocomplete state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let mentionPickerIndex = 0;
 let mentionPickerMatches = [];
 
@@ -219,19 +219,19 @@ const SLASH_COMMANDS = [
 	{
 		name: "shrug",
 		args: "",
-		desc: "¯\\_(ツ)_/¯",
+		desc: "Â¯\\_(ãƒ„)_/Â¯",
 		mod: false,
 	},
 	{
 		name: "tableflip",
 		args: "",
-		desc: "(╯°□°）╯︵ ┻━┻",
+		desc: "(â•¯Â°â–¡Â°ï¼‰â•¯ï¸µ â”»â”â”»",
 		mod: false,
 	},
 	{
 		name: "unflip",
 		args: "",
-		desc: "┬─┬ノ( º _ ºノ)",
+		desc: "â”¬â”€â”¬ãƒŽ( Âº _ ÂºãƒŽ)",
 		mod: false,
 	},
 	{
@@ -580,23 +580,23 @@ async function handleSlashCommand(rawText) {
 			return true;
 		}
 		case "shrug":
-			await window.chat.sendMessage(`¯\\_(ツ)_/¯${args ? " " + args : ""}`);
+			await window.chat.sendMessage(`Â¯\\_(ãƒ„)_/Â¯${args ? " " + args : ""}`);
 			return true;
 		case "tableflip":
-			await window.chat.sendMessage(`(╯°□°）╯︵ ┻━┻${args ? " " + args : ""}`);
+			await window.chat.sendMessage(`(â•¯Â°â–¡Â°ï¼‰â•¯ï¸µ â”»â”â”»${args ? " " + args : ""}`);
 			return true;
 		case "unflip":
-			await window.chat.sendMessage(`┬─┬ノ( º _ ºノ)${args ? " " + args : ""}`);
+			await window.chat.sendMessage(`â”¬â”€â”¬ãƒŽ( Âº _ ÂºãƒŽ)${args ? " " + args : ""}`);
 			return true;
 		case "roll": {
 			const sides = parseInt(args) || 6;
 			const result = Math.floor(Math.random() * sides) + 1;
-			await window.chat.sendMessage(`🎲 rolled a d${sides} and got **${result}**`);
+			await window.chat.sendMessage(`ðŸŽ² rolled a d${sides} and got **${result}**`);
 			return true;
 		}
 		case "coinflip": {
-			const side = Math.random() < 0.5 ? "Heads 🪙" : "Tails 🪙";
-			await window.chat.sendMessage(`🪙 flipped a coin: **${side}**`);
+			const side = Math.random() < 0.5 ? "Heads ðŸª™" : "Tails ðŸª™";
+			await window.chat.sendMessage(`ðŸª™ flipped a coin: **${side}**`);
 			return true;
 		}
 		case "help": {
@@ -667,7 +667,7 @@ async function handleSlashCommand(rawText) {
 				body: JSON.stringify({ locked }),
 			});
 			if (res.ok) {
-				showEphemeralMessage(`<span style="color:#3dd56d">#${escapeHtml(room)} is now ${locked ? "locked 🔒" : "unlocked 🔓"}.</span>`);
+				showEphemeralMessage(`<span style="color:#3dd56d">#${escapeHtml(room)} is now ${locked ? "locked ðŸ”’" : "unlocked ðŸ”“"}.</span>`);
 				window.chatUI?.renderSidebar();
 			} else {
 				showEphemeralMessage(`<span style="color:#f04747">Failed to ${cmd} channel.</span>`);
@@ -778,7 +778,7 @@ function parseQuoteTag(b64, srcMsgId = null) {
 		const safeBgStyle = escapeHtmlAttribute(`background-image:url(${JSON.stringify(q.a || "/assets/img/fav.png")})`);
 		const safeText = escapeHtml(q.t);
 		const safeSrcId = srcMsgId != null ? ` data-src-msg-id="${Number(srcMsgId)}"` : "";
-		return `<div class="quote-card"${safeSrcId}><div class="quote-card-bg" style="${safeBgStyle}"></div><div class="quote-card-content"><div class="quote-card-body">${safeText}</div><div class="quote-card-author">— ${safeDisplay}</div><div class="quote-card-username">@${safeUsername}</div></div><div class="quote-card-watermark">Make it a Quote</div><button class="quote-card-save" onclick="window.chat.saveQuoteFromCard(this)" title="Save quote"><i class="fas fa-bookmark"></i></button></div>`;
+		return `<div class="quote-card"${safeSrcId}><div class="quote-card-bg" style="${safeBgStyle}"></div><div class="quote-card-content"><div class="quote-card-body">${safeText}</div><div class="quote-card-author">â€” ${safeDisplay}</div><div class="quote-card-username">@${safeUsername}</div></div><div class="quote-card-watermark">Make it a Quote</div><button class="quote-card-save" onclick="window.chat.saveQuoteFromCard(this)" title="Save quote"><i class="fas fa-bookmark"></i></button></div>`;
 	} catch {
 		return null;
 	}
@@ -886,7 +886,7 @@ function buildVoiceWaveform(seed) {
 	return bars.join("");
 }
 
-// Global voice player — only one playing at a time
+// Global voice player â€” only one playing at a time
 window.voicePlayerToggle = (function () {
 	let _audio = null;
 	let _src = null;
@@ -940,7 +940,7 @@ window.voicePlayerToggle = (function () {
 		if (timeEl) timeEl.textContent = "0:00";
 	}
 
-	// Pause safely — defer if play() hasn't resolved yet to avoid AbortError
+	// Pause safely â€” defer if play() hasn't resolved yet to avoid AbortError
 	function safePause(audio) {
 		if (_playPending) {
 			// wait for play to resolve, then pause
@@ -979,7 +979,7 @@ window.voicePlayerToggle = (function () {
 		const src = container.dataset.src;
 		if (!src) return;
 
-		// same track — pause/resume
+		// same track â€” pause/resume
 		if (_audio && _src === src) {
 			if (_playPending) return; // ignore click while still loading
 			if (_audio.paused) {
@@ -994,7 +994,7 @@ window.voicePlayerToggle = (function () {
 			return;
 		}
 
-		// different track — stop old, start new
+		// different track â€” stop old, start new
 		if (_audio) {
 			stopTick();
 			const old = getContainer();
@@ -1022,7 +1022,7 @@ window.voicePlayerToggle = (function () {
 			_playPending = false;
 		}).catch(e => {
 			_playPending = false;
-			// AbortError = we paused before play resolved (e.g. user switched tracks) — not an error
+			// AbortError = we paused before play resolved (e.g. user switched tracks) â€” not an error
 			if (e.name !== "AbortError") {
 				console.error("[voice] play failed:", e);
 				stop();
@@ -1292,7 +1292,7 @@ const VoiceChat = {
 		panel.innerHTML = `
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
             <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-2);opacity:0.7;">
-                Voice · #${escapeHtml(this.room)}
+                Voice Â· #${escapeHtml(this.room)}
             </span>
             <div style="display:flex;gap:4px;">
                 <button onclick="window.VoiceChat.toggleMute()" title="${this.muted ? "Unmute" : "Mute"}"
@@ -1376,7 +1376,7 @@ const VoiceChat = {
 		try {
 			let livekitUrl = `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}/livekit`;
 			if (window.location.host === "localhost:2000")
-				livekitUrl = "wss://cherrion.top/livekit";
+				livekitUrl = "wss://infrared.earth/livekit";
 			await roomHandle.connect(livekitUrl, token);
 			await roomHandle.localParticipant.setMicrophoneEnabled(true);
 			this.room = room;
@@ -1484,7 +1484,7 @@ window.chat = {
 		const d = msg.display || msg.username;
 		const a = msg.avatar_url || "/assets/img/fav.png";
 		const t = msg.content.replace(/\[gif:[^\]]+\]/g, "[gif]").slice(0, 300);
-		const previewText = t.length > 80 ? t.slice(0, 80) + "…" : t;
+		const previewText = t.length > 80 ? t.slice(0, 80) + "â€¦" : t;
 
 		const menu = document.createElement("div");
 		menu.id = "quote-action-menu";
@@ -1494,7 +1494,7 @@ window.chat = {
 				<img src="${escapeHtmlAttribute(a)}" class="qam-avatar" onerror="this.src='/assets/img/fav.png'" />
 				<div class="qam-info">
 					<span class="qam-display">${escapeHtml(d)}</span>
-					<span class="qam-text">“${escapeHtml(previewText)}”</span>
+					<span class="qam-text">â€œ${escapeHtml(previewText)}â€</span>
 				</div>
 			</div>
 			<div class="qam-actions">
@@ -1536,7 +1536,7 @@ window.chat = {
 		const card = btn.closest(".quote-card");
 		const srcMsgId = card?.dataset?.srcMsgId ? Number(card.dataset.srcMsgId) : null;
 		if (!srcMsgId) {
-			showToast("Cannot save this quote — no message reference found.", "error");
+			showToast("Cannot save this quote â€” no message reference found.", "error");
 			return;
 		}
 		btn.disabled = true;
@@ -1573,7 +1573,7 @@ window.chat = {
 	async loadSavedQuotes() {
 		const container = document.getElementById("quotes-results");
 		if (!container) return;
-		container.innerHTML = `<span class="quotes-empty">Loading…</span>`;
+		container.innerHTML = `<span class="quotes-empty">Loadingâ€¦</span>`;
 		try {
 			const data = await apiRequest("/api/quotes");
 			const quotes = Array.isArray(data.quotes) ? data.quotes : [];
@@ -1596,7 +1596,7 @@ window.chat = {
 					<div class="sqi-bg" style="${safeBg}"></div>
 					<div class="sqi-body">
 						<div class="sqi-text">${escapeHtml(qContent)}</div>
-						<div class="sqi-author">— ${escapeHtml(qDisplay || qUser)}</div>
+						<div class="sqi-author">â€” ${escapeHtml(qDisplay || qUser)}</div>
 					</div>
 					<button class="sqi-delete" onclick="event.stopPropagation();window.chat.deleteSavedQuote(${q.id},this.closest('.saved-quote-item'))" title="Remove"><i class="fas fa-times"></i></button>`;
 				item.addEventListener("click", () => {
@@ -2371,7 +2371,7 @@ window.chat = {
 			if (shouldChain) {
 				div.innerHTML = `<div class="message-details">
                 <div class="message-text" style="opacity:0.35;font-size:0.85rem;font-style:italic;cursor:pointer;" onclick="window.chat.revealBlocked('${msg.from}')">
-                    — blocked message — <span style="text-decoration:underline;opacity:0.7;">click to reveal</span>
+                    â€” blocked message â€” <span style="text-decoration:underline;opacity:0.7;">click to reveal</span>
                 </div>
             </div>${actionHtml}`;
 			} else {
@@ -2382,7 +2382,7 @@ window.chat = {
                     <span class="user-name" style="opacity:0.35;">${safeUsername}</span>
                 </div>
                 <div class="message-text" style="opacity:0.35;font-size:0.85rem;font-style:italic;cursor:pointer;" onclick="window.chat.revealBlocked('${msg.from}')">
-                    — blocked message — <span style="text-decoration:underline;opacity:0.7;">click to reveal</span>
+                    â€” blocked message â€” <span style="text-decoration:underline;opacity:0.7;">click to reveal</span>
                 </div>
             </div>${actionHtml}`;
 			}
@@ -2719,7 +2719,7 @@ window.chat = {
 		input.textContent = msg.content;
 		const actions = document.createElement("div");
 		actions.className = "inline-edit-actions";
-		actions.innerHTML = `<span class="inline-edit-hint">esc to cancel · enter to save</span>
+		actions.innerHTML = `<span class="inline-edit-hint">esc to cancel Â· enter to save</span>
 			<button class="btn btn-ghost" style="padding:3px 10px;font-size:0.8rem;" onclick="window.chat.cancelEdit(${id})">Cancel</button>
 			<button class="btn btn-primary" style="padding:3px 10px;font-size:0.8rem;" onclick="window.chat.saveEdit(${id})">Save</button>`;
 		editWrap.appendChild(input);
@@ -2754,7 +2754,7 @@ window.chat = {
 		const input = msgEl.querySelector(".inline-edit-input");
 		if (!input) return;
 		const newContent = escapeChars(
-			input.innerText.trim().replace(/[­​‌⠀﻿]|‍/g, "").replace(/\n{3,}/g, "\n\n"),
+			input.innerText.trim().replace(/[Â­â€‹â€Œâ €ï»¿]|â€/g, "").replace(/\n{3,}/g, "\n\n"),
 		);
 		if (!newContent) return;
 		try {
@@ -2814,7 +2814,7 @@ window.chat = {
 	},
 
 	openReactPicker(messageId, btn) {
-		const QUICK_EMOJIS = ["👍", "❤️", "😂", "😮", "😢", "🔥", "🎉", "✅"];
+		const QUICK_EMOJIS = ["ðŸ‘", "â¤ï¸", "ðŸ˜‚", "ðŸ˜®", "ðŸ˜¢", "ðŸ”¥", "ðŸŽ‰", "âœ…"];
 		const existing = document.getElementById("quick-react-picker");
 		if (existing) { existing.remove(); if (existing.dataset.msgId === String(messageId)) return; }
 		const picker = document.createElement("div");
@@ -2905,7 +2905,7 @@ msgInput.addEventListener("input", () => {
 	}
 
 	const text = msgInput.innerText;
-	// Slash command autocomplete — only when / is the very first char
+	// Slash command autocomplete â€” only when / is the very first char
 	if (text.startsWith("/") && !text.includes(" ")) {
 		const query = text.slice(1).toLowerCase();
 		const isAdminLocal = ["x8r","sprintingsnail","technonyte","dinguschan","syntaxerror52","yash","josh22_28","yzycoin","beetlejuice","snake","blairebear",].includes(window._currentUsername || "");
