@@ -1,4 +1,4 @@
-import { extname, resolve } from "node:path";
+import { extname, relative, resolve } from "node:path";
 import { publicPath } from "../config/paths";
 
 function resolvePublicCandidate(pathname: string): string[] {
@@ -23,7 +23,7 @@ const MAX_PATH_COMPONENT_BYTES = 255;
 function toSafePath(candidate: string): string | null {
 	const sanitized = candidate.startsWith("/") ? candidate : `/${candidate}`;
 	const resolved = resolve(publicPath, `.${sanitized}`);
-	if (!resolved.startsWith(publicPath)) {
+	if (relative(publicPath, resolved).startsWith("..")) {
 		return null;
 	}
 
